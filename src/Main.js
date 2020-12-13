@@ -18,6 +18,8 @@ import { FormControlLabel, Switch } from "@material-ui/core";
 import { blue, deepPurple, lightBlue, purple, teal } from "@material-ui/core/colors";
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 
 function Copyright() {
   return (
@@ -81,7 +83,6 @@ const Main = () => {
       type: palletType,
       primary: {
         main: mainPrimaryColor
-
       },
       secondary: {
         main: mainSecondaryColor
@@ -111,7 +112,7 @@ const Main = () => {
             James Welsh
           </Typography>
           <div className={classes.toolbarButtons}>
-            <FormControlLabel 
+{/*             <FormControlLabel 
             value="dark_mode"
             label="Dark Mode"
             control={<Switch
@@ -119,8 +120,10 @@ const Main = () => {
               onChange={handleThemeChange} 
               />}
             labelPlacement="start"
- 
-            />
+            /> */}
+            <IconButton onClick={() => handleThemeChange()}>
+              {darkState ? <Brightness4Icon/> : <Brightness7Icon/>}
+            </IconButton>
             </div>
         </Toolbar>
       </AppBar>
