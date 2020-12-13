@@ -41,35 +41,33 @@ function ProjectCard({
         }}
         /* avatar={avatar} */
         action={
-          <>
+        <>
         {
         demo
         ? <Button
-                  className={classes.Button}
-                  size="large"
-                  color="primary" 
-                  variant="contained" 
-                  href={demo}>
-                    Demo
-                </Button>
+            className={classes.Button}
+            size="large"
+            color="primary" 
+            variant="contained" 
+            href={demo}>
+            Demo
+          </Button>
         : null
         }
-        <Button 
-          className={classes.Button}
-          size="large"
-          color="secondary" 
-          variant="outlined" 
-          href={repo}>
+          <Button 
+            className={classes.Button}
+            size="large"
+            color="secondary" 
+            variant="outlined" 
+            href={repo}>
             Repo
-        </Button>
-        </>
-        } 
-
+          </Button>
+        </>}
       />
       <CardMedia className={classes.cardMedia} image={"https://source.unsplash.com/random"} title={header} />
       <CardContent className={classes.cardContent}>
-          {technologies.map(technology =>
-          <TechChip 
+        {technologies.map(technology =>
+        <TechChip 
           icon={technology.icon}
           label={technology.label}
           svg={technology.svg}

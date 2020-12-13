@@ -25,13 +25,13 @@ function Main({
         container 
         justify="center"
         spacing={4}>
-        {projects.map((project) => 
-        <Grid 
-          item 
-          key={project.header} 
-          xs={12} 
-          sm={12} 
-          md={6} 
+        {projects.map((project) =>
+        <Grid
+          item
+          key={project.header}
+          xs={12}
+          sm={12}
+          md={6}
           lg={6}>
           <ProjectCard 
             technologies={project.technologies}

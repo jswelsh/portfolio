@@ -21,8 +21,8 @@ function TechChip({
   }
   return (
     (
-    icon !== null
-    ? <Chip 
+    icon !== null ? 
+    <Chip 
       icon={<Icon size={.80} path={icon} />}
       key={label}
       color="primary"

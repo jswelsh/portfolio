@@ -9,7 +9,7 @@ function LinkItem({
   return (<Link color="inherit" href={link}>
     <Grid container spacing={2} justify="center" direction="row">
       <Grid item>
-          {icon}
+        {icon}
       </Grid>
       <Grid item>
         <Typography variant="subtitle1" align="center">

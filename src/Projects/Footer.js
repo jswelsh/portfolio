@@ -22,8 +22,7 @@ function Footer() {
           key= {item.label}
           label= {item.label}
           link= {item.link}
-          icon= {item.icon}
-          />)}
+          icon= {item.icon}/>)}
     </footer>
   );
 }

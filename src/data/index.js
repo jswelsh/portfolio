@@ -11,10 +11,7 @@ import {
   mdiLanguageRubyOnRails,
   mdiCreditCardCheck,
   mdiDatabaseSearch,
-  mdiAlphaSBoxOutline,
-  mdiAlphaJCircleOutline,
   mdiAlphaKBoxOutline,
-  mdiLipstick,
   mdiNodejs,
   mdiLanguageCss3,
   mdiMaterialUi, 
@@ -223,10 +220,3 @@ const projects = [
   
 ];
 export { links, projects }
-
-/* 
-// npm install --save-dev @iconify/react @iconify-icons/simple-icons
-import { Icon, InlineIcon } from '@iconify/react';
-import tensorflowIcon from '@iconify-icons/simple-icons/tensorflow';
-
-*/
