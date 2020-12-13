@@ -14,8 +14,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import { Switch } from "@material-ui/core";
+import { FormControlLabel, Switch } from "@material-ui/core";
 import { blue, deepPurple, lightBlue, purple, teal } from "@material-ui/core/colors";
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 function Copyright() {
   return (
@@ -31,6 +33,9 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -59,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  toolbarButtons: {
+    marginLeft: 'auto',
+  },
 }));
 
 const projects = [1, 2, 3];
@@ -80,7 +88,7 @@ const Main = () => {
       },
       textPrimary:{
         main:'#000'
-      }
+      },
     }
   });
   const handleThemeChange = () => {
@@ -93,13 +101,27 @@ const Main = () => {
     <>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <AppBar position="relative">
+      <div className={classes.root}>
+      <AppBar position="static">
         <Toolbar>
-          {/* <CameraIcon className={classes.icon} /> */}
-          <Typography variant="h6" color="inherit" noWrap>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit" /* noWrap */>
             James Welsh
           </Typography>
-          <Switch checked={darkState} onChange={handleThemeChange} />
+          <div className={classes.toolbarButtons}>
+            <FormControlLabel 
+            value="dark_mode"
+            label="Dark Mode"
+            control={<Switch
+              checked={darkState} 
+              onChange={handleThemeChange} 
+              />}
+            labelPlacement="start"
+ 
+            />
+            </div>
         </Toolbar>
       </AppBar>
       <main>
@@ -174,6 +196,7 @@ const Main = () => {
         <Copyright />
       </footer>
       {/* End footer */}
+      </div>
       </ThemeProvider>
     </>
   );
