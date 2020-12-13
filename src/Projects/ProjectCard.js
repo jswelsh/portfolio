@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   cardMedia: {
+    height:'300px',
     paddingTop: '56.25%', // 16:9
   },
   cardContent: {
@@ -21,13 +22,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProjectCard({
-  header,
   technologies,
+  header,
+  image,
   demo,
   repo
 }) {
+  console.log(image);
   const classes = useStyles();
-  console.log(header)
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -63,7 +65,7 @@ function ProjectCard({
         } 
 
       />
-      <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title={header} />
+      <CardMedia className={classes.cardMedia} image={require('./CurExC.jpeg')}/* "https://source.unsplash.com/random" */ title={header} />
       <CardContent className={classes.cardContent}>
           {technologies.map(technology =>
           <TechChip 

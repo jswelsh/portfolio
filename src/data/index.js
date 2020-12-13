@@ -7,12 +7,11 @@ import {
   mdiChartLineVariant,
   mdiCalendarRange,
   mdiSwapHorizontal,
-  mdiLanguageCss3,
+  // mdiLanguageCss3,
   mdiMaterialUi, 
   mdiReact,
- } from '@mdi/js';
+} from '@mdi/js';
 
-import {  } from '@mdi/js';
 
 
 const links = [
@@ -33,6 +32,7 @@ const projects = [
     header: 'CurExC',
     demo: 'https://curexc.web.app/',
     repo: 'https://github.com/jswelsh/currency_converter_v1',
+    image: '/public/CurExC.jpeg',
     technologies: [
       {
         label:'React',
@@ -54,11 +54,11 @@ const projects = [
         icon: mdiSwapHorizontal
       }
     ],
-    image: null
   }, {
     header: 'TransLink',
     demo: 'https://agitated-galileo-f1090b.netlify.app/',
     repo: 'https://github.com/jswelsh/translinkGraph',
+    image: null,
     technologies: [
       {
         label:'Javascript',
@@ -68,7 +68,6 @@ const projects = [
         icon: mdiLanguageHtml5  
       }
     ],
-    image: null
   }
 ];
 export { links, projects }

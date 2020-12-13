@@ -24,8 +24,9 @@ function Main({
       <Grid container spacing={4}>
         {projects.map((project) => <Grid item key={project.header} xs={12} sm={12} md={6}>
             <ProjectCard 
-              header={project.header}
               technologies={project.technologies}
+              header={project.header}
+              image={project.image}
               demo={project.demo}
               repo={project.repo}
               />
