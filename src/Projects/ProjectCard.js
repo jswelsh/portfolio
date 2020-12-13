@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-import { CardHeader, List, Card, CardContent, CardMedia, Button } from "@material-ui/core";
+import { CardHeader, Card, CardContent, CardMedia, Button } from "@material-ui/core";
 import {TechChip} from './TechChip'
 
 const useStyles = makeStyles((theme) => ({
@@ -15,34 +15,60 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  Button:{
+    margin:5
+  }
 }));
 
-function ProjectCard({}) {
+function ProjectCard({
+  header,
+  technologies,
+  demo,
+  repo
+}) {
   const classes = useStyles();
-
+  console.log(header)
   return (
     <Card className={classes.card}>
       <CardHeader
-        title='Heading' 
+        title={header}
         titleTypographyProps={{
           align: 'left',
           variant: "h4"
         }}
         /* avatar={avatar} */
         action={
+          <>
+        {
+        demo
+        ? <Button
+                  className={classes.Button}
+                  size="large"
+                  color="primary" 
+                  variant="contained" 
+                  href={demo}>
+                    Demo
+                </Button>
+        : null
+        }
         <Button 
+          className={classes.Button}
           size="large"
           color="secondary" 
           variant="outlined" 
-          href="https://resume.creddle.io/resume/du4st9n0u9e">
-            View
-        </Button>} 
+          href={repo}>
+            Repo
+        </Button>
+        </>
+        } 
+
       />
-      <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title="Image title" />
+      <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title={header} />
       <CardContent className={classes.cardContent}>
-        <List>
-          <TechChip />
-        </List>
+          {technologies.map(technology =>
+          <TechChip 
+          icon={technology.icon}
+          label={technology.label}/>)}
       </CardContent>
     </Card>);
     }

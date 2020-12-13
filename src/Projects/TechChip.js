@@ -1,5 +1,7 @@
-import { Chip, ListItem } from "@material-ui/core";
+import { Chip } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@mdi/react'
+
 
 const useStyles = makeStyles((theme) => ({
   chip: {
@@ -7,17 +9,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function TechChip({}) {
+function TechChip({label, icon}) {
   
   const classes = useStyles();
 
-  return (<ListItem>
+  return (
     <Chip 
-      //icon={icon}
-      //label={data.label}
-      label='React' 
-      className={classes.chip} />
-    </ListItem>
+      icon={<Icon size={.80} path={icon} />}
+      key={label}
+      color="primary"
+      label={label} 
+      className={classes.chip}/>
   );
 }
 

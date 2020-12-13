@@ -26,8 +26,6 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const projects = [1, 2, 3];
-
 const Projects = () => {
   const [darkState, setDarkState] = useState(false);
   const palletType = darkState ? "dark" : "light"; 
@@ -68,11 +66,15 @@ const Projects = () => {
               <IconButton onClick={() => handleThemeChange()}>
                 {darkState ? <Brightness4Icon/> : <Brightness7Icon/>}
               </IconButton>
+              <IconButton>
+                <GitHubIcon 
+                  fontSize={'large'} 
+                  onClick={() =>  window.location.href='https://github.com/jswelsh'}/>
+              </IconButton>
             </div>
           </Toolbar>
         </AppBar>
-          <Main   
-          projects={projects}/>
+          <Main/>
         {/* Footer */}
           <Footer />
         {/* End footer */}
