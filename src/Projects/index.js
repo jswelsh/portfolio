@@ -3,41 +3,23 @@ import { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Link, Typography, Toolbar, Grid, AppBar } from "@material-ui/core";
+import { Typography, Toolbar, Grid, AppBar } from "@material-ui/core";
 import { blue, lightBlue, purple } from "@material-ui/core/colors";
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import { Main } from './Main'
+import { Footer } from "./Footer";
 
 
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   icon: {
     marginRight: theme.spacing(2),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  footer: {
-    padding: theme.spacing(6),
   },
   toolbarButtons: {
     marginLeft: 'auto',
@@ -92,15 +74,7 @@ const Projects = () => {
           <Main   
           projects={projects}/>
         {/* Footer */}
-        <footer className={classes.footer}>
-          <Typography variant="h6" align="center" gutterBottom>
-            James Welsh
-          </Typography>
-          <Typography variant="subtitle1" align="center" component="p">
-            Living the dream!
-          </Typography>
-          <Copyright />
-        </footer>
+          <Footer />
         {/* End footer */}
         </div>
     </ThemeProvider>
