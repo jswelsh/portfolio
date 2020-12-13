@@ -19,11 +19,11 @@ function Footer() {
 
       {links.map(item => 
         <LinkItem 
-        key= {item.label}
-        label= {item.label}
-        link= {item.link}
-        icon= {item.icon}
-        />)}
+          key= {item.label}
+          label= {item.label}
+          link= {item.link}
+          icon= {item.icon}
+          />)}
     </footer>
   );
 }

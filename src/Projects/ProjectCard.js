@@ -10,8 +10,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    height:'300px',
-    paddingTop: '56.25%', // 16:9
+    // paddingTop: '56.25%', // 16:9
+    paddingTop: '60.25%', // 16:9
+
   },
   cardContent: {
     flexGrow: 1,
@@ -36,7 +37,7 @@ function ProjectCard({
         title={header}
         titleTypographyProps={{
           align: 'left',
-          variant: "h4"
+          variant: "h5"
         }}
         /* avatar={avatar} */
         action={
@@ -65,12 +66,14 @@ function ProjectCard({
         } 
 
       />
-      <CardMedia className={classes.cardMedia} image={require('./CurExC.jpeg')}/* "https://source.unsplash.com/random" */ title={header} />
+      <CardMedia className={classes.cardMedia} image={"https://source.unsplash.com/random"} title={header} />
       <CardContent className={classes.cardContent}>
           {technologies.map(technology =>
           <TechChip 
           icon={technology.icon}
-          label={technology.label}/>)}
+          label={technology.label}
+          svg={technology.svg}
+          />)}
       </CardContent>
     </Card>);
     }

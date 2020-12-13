@@ -21,16 +21,25 @@ function Main({
     <HeroContent />
     <Container className={classes.cardGrid} maxWidth="md">
       {/* End hero unit */}
-      <Grid container spacing={4}>
-        {projects.map((project) => <Grid item key={project.header} xs={12} sm={12} md={6}>
-            <ProjectCard 
-              technologies={project.technologies}
-              header={project.header}
-              image={project.image}
-              demo={project.demo}
-              repo={project.repo}
-              />
-          </Grid>)}
+      <Grid 
+        container 
+        justify="center"
+        spacing={4}>
+        {projects.map((project) => 
+        <Grid 
+          item 
+          key={project.header} 
+          xs={12} 
+          sm={12} 
+          md={6} 
+          lg={6}>
+          <ProjectCard 
+            technologies={project.technologies}
+            header={project.header}
+            image={project.image}
+            demo={project.demo}
+            repo={project.repo}/>
+        </Grid>)}
       </Grid>
     </Container>
   </main>);
