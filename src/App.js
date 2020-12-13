@@ -1,4 +1,5 @@
 import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -13,6 +14,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+export const useStyles = makeStyles((theme) => ({
+  root: {
+    textAlign: 'center'
+  },
+
+}));
 
 function App() {
   const [darkState, setDarkState] = useState(false);
@@ -36,21 +44,31 @@ function App() {
   const handleThemeChange = () => {
     setDarkState(!darkState);
   };
+
+  const classes = useStyles();
   return (
 
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-
-      {/*<div className="App"></div>*/}
+      <div className={classes.root}>
       <Router>
-      <NavBar
-        darkState={darkState}
-        handleThemeChange={handleThemeChange}
-      />
-        <Projects 
+        <NavBar
           darkState={darkState}
+          handleThemeChange={handleThemeChange}
         />
+        <Switch>
+          <Route path='/projects'>
+            <Projects 
+              darkState={darkState}/>
+          </Route>
+          <Route path='/'>
+            <p>
+              'hi'
+              </p>
+          </Route>
+        </Switch>
       </Router>
+      </div>
     </ThemeProvider>
   );
 }
