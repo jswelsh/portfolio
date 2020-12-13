@@ -1,25 +1,25 @@
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { useState } from "react";
+import { makeStyles } from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import { FormControlLabel, Switch } from "@material-ui/core";
+import { CardHeader, List, ListItem, Switch } from "@material-ui/core";
 import { blue, deepPurple, lightBlue, purple, teal } from "@material-ui/core/colors";
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import {TechChip} from './TechChip'
 
 function Copyright() {
   return (
@@ -63,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   footer: {
-    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
   toolbarButtons: {
@@ -76,8 +75,8 @@ const projects = [1, 2, 3];
 const Main = () => {
   const [darkState, setDarkState] = useState(false);
   const palletType = darkState ? "dark" : "light"; 
-  const mainPrimaryColor = darkState ? purple[600] : lightBlue[500];
-  const mainSecondaryColor = darkState ? purple[200] : blue[500];
+  const mainPrimaryColor = darkState ? purple[600] : blue[500];
+  const mainSecondaryColor = darkState ? purple[200] : lightBlue[500];
   const darkTheme = createMuiTheme({
     palette: {
       type: palletType,
@@ -164,24 +163,37 @@ const Main = () => {
             {projects.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
+                  <CardHeader
+                    title='Heading'
+                    titleTypographyProps={{ align: 'left',variant: "h4" }}
+                    /* avatar={avatar} */ 
+                    action={
+                      <Button 
+                        size="large" 
+                        color="secondary" 
+                        variant="outlined" 
+                        href="https://resume.creddle.io/resume/du4st9n0u9e">
+                        View
+                      </Button>
+                    }/>
+
                   <CardMedia
                     className={classes.cardMedia}
                     image="https://source.unsplash.com/random"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
+{/*                     <Typography gutterBottom variant="h5" component="h2">
                       Heading
-                    </Typography>
-                    <Typography>
+                    </Typography> */}
+                            
+{/*                     <Typography>
                       This is a media card. You can use this section to describe the content.
-                    </Typography>
+                    </Typography> */}
+                    <List>
+                      <TechChip />
+                    </List>
                   </CardContent>
-                  <CardActions>
-                    <Button size="large" color="secondary" variant="outlined">
-                      View
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
             ))}
@@ -193,7 +205,7 @@ const Main = () => {
         <Typography variant="h6" align="center" gutterBottom>
           James Welsh
         </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+        <Typography variant="subtitle1" align="center" component="p">
           Living the dream!
         </Typography>
         <Copyright />
