@@ -12,12 +12,13 @@ function TechChip({}) {
   const classes = useStyles();
 
   return (<ListItem>
-  <Chip 
-    //icon={icon}
-    //label={data.label}
-    label='React' 
-    className={classes.chip} />
-  </ListItem>);
+    <Chip 
+      //icon={icon}
+      //label={data.label}
+      label='React' 
+      className={classes.chip} />
+    </ListItem>
+  );
 }
 
 export { TechChip }
