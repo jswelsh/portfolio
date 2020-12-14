@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
-import { links } from './../data'
-import { LinkItem } from './LinkItem'
+import { links } from './data'
+import { LinkItem } from './Projects/LinkItem'
 
 export const useStyles = makeStyles((theme) => ({
   footer: {

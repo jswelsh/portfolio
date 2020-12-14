@@ -5,6 +5,8 @@ import { Container, Typography, Grid, Button } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
+    backgroundColor: theme.palette.primary.dark 
+
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -21,7 +23,7 @@ function HeroContent({}) {
           component="h1"
           variant="h2"
           align="center"
-          color="textPrimary"
+          color="textPrimaryDark"
           gutterBottom>
           My Projects
         </Typography>
@@ -32,7 +34,7 @@ function HeroContent({}) {
           paragraph>
           A curated collection of my current projects, the scope of which ranges from small instances of functionality to comprehensive full fledge applications.
         </Typography>
-        <div className={classes.heroButtons}>
+{/*         <div className={classes.heroButtons}>
           <Grid
             container 
             spacing={2}
@@ -53,7 +55,7 @@ function HeroContent({}) {
               </Button>
             </Grid>
           </Grid>
-        </div>
+        </div> */}
       </Container>
     </div>
   );

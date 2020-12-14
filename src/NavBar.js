@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Link } from "react-router-dom";
@@ -15,6 +14,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   toolbarButtons: {
     marginLeft: 'auto',
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
   },
 }));
 
@@ -39,12 +41,12 @@ const NavBar = ({
     <AppBar position="static">
       <Toolbar>
         <IconButton
+          className={classes.menuButton}
           aria-label="account of current user"
           aria-controls="menu-appbar"
           aria-haspopup="true"
           onClick={handleMenu}
-          color="inherit"
-        >
+          color="inherit">
           <AppsIcon />
         </IconButton>
         <Menu
@@ -59,14 +61,15 @@ const NavBar = ({
             horizontal: 'right'}}
           open={open}
           onClose={handleClose}>
-          <MenuItem 
+          <MenuItem
             component={Link}
             to={'/projects'}
             onClick={handleClose}>Projects</MenuItem>
-          <MenuItem 
-            onClick={handleClose}>Something</MenuItem>
+          <MenuItem
+            component={Link}
+            to={'/profile'}
+            onClick={handleClose}>Profile</MenuItem>
         </Menu>
-
         <Typography variant="h5">
           James Welsh
         </Typography>
