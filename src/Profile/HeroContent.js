@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Typography, Paper, Divider } from "@material-ui/core";
+import { Container, Typography, Paper } from "@material-ui/core";
 
 import avatar_dark from './Avatar_dark.svg'
 import avatar_light from './Avatar_light.svg'
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HeroContent({
+  gitHubData,
   darkState
 }) {
   const classes = useStyles();
@@ -40,6 +41,14 @@ function HeroContent({
   return (
     <div className={classes.heroContent}>
       <Container maxWidth="sm">
+      
+        <Paper className={classes.circle}>
+          {
+          darkState
+          ? <img src={avatar_dark} className={classes.avatar}/>
+          : <img src={avatar_light} className={classes.avatar}/>
+          }        
+        </Paper>
         <Typography
           component="h1"
           variant="h2"
@@ -48,19 +57,17 @@ function HeroContent({
           gutterBottom>
           James Welsh
         </Typography>
-        <Paper className={classes.circle}>
-          {
-          darkState
-          ? <img src={avatar_dark} className={classes.avatar}/>
-          : <img src={avatar_light} className={classes.avatar}/>
-          }        </Paper>
         <Typography
           className={classes.caption}
-          variant="h5"
+          variant="h6"
           align="center"
           color="textSecondary"
           paragraph>
-            I spend most of my free time working on coding projects, reading forums or articles on either tech, UI/UX or very obscure oddities throughout history. I truly am a sucker for going down the rabbit hole...
+            Full Stack Developer, located in Raincouver, BC. Making neat things for the web, bugs and all
+        </Typography>
+        <Typography> Location: {gitHubData && gitHubData.data.location} </Typography>
+        <Typography> Public repos :{gitHubData && gitHubData.data['public_repos']}
+
         </Typography>
       </Container>
     </div>

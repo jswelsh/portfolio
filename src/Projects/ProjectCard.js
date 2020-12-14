@@ -29,7 +29,6 @@ function ProjectCard({
   demo,
   repo
 }) {
-  console.log(image);
   const classes = useStyles();
   return (
     <Card className={classes.card}>

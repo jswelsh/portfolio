@@ -1,9 +1,12 @@
+import { useEffect, useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
 import { HeroContent } from './HeroContent'
 import { Container, Grid } from "@material-ui/core";
 
 import { Footer } from '../Footer'
+
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -15,16 +18,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const gitHubUrl ='https://api.github.com/users/jswelsh '
+// const fetchGitHubData = axios.get(gitHubUrl);
+
+
+/* 
+*/
+
 
 const Profile = ({
   darkState
 }) => {
+
+  const [gitHubData, setGitHubData] = useState();
+  useEffect(() => {    
+    axios.get(gitHubUrl)
+    .then(function (response) {
+      // handle success
+      setGitHubData(response)
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+  },[]);
   const classes = useStyles();
   return (
     <>
       <main className={classes.root}>
         {/* Hero unit */}
-        <HeroContent 
+        <HeroContent
+          gitHubData={gitHubData}
           darkState={darkState}/>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}

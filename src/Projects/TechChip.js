@@ -17,7 +17,6 @@ function TechChip({
   
   const classes = useStyles();
   if( icon === null ){
-    console.log(svg);
   }
   return (
     (
