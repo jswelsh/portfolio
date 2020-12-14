@@ -13,9 +13,8 @@ function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
-      <Typography variant="h6" align="center" gutterBottom>
-        James Welsh
-    </Typography>
+{/*       <Typography variant="h6" align="center" gutterBottom>
+    </Typography> */}
 
       {links.map(item => 
         <LinkItem 

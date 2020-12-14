@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
 import { HeroContent } from './HeroContent'
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core"
 
 import { Footer } from '../Footer'
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const gitHubUrl ='https://api.github.com/users/jswelsh '
+const gitHubUrl ='https://api.github.com/users/jswelsh'
 // const fetchGitHubData = axios.get(gitHubUrl);
 
 
@@ -36,11 +36,23 @@ const Profile = ({
     .then(function (response) {
       // handle success
       setGitHubData(response)
-      console.log(response);
+      // console.log(response);
     })
     .catch(function (error) {
       // handle error
       console.log(error);
+    })
+
+      axios.get('https://api.github.com/users/jswelsh/repos')
+      .then(function (response) {
+        console.log(response.data.reduce(function(countMap, obj) {countMap[obj.language] = ++countMap[obj.language] || 1;return countMap}, {}));
+/*         response.data.forEach(element => {
+          console.log(element.language, element.name)
+        }); */
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
     })
   },[]);
   const classes = useStyles();
