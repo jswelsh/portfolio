@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 import { CardHeader, Card, CardContent, CardMedia, Button } from "@material-ui/core";
-import {TechChip} from './TechChip'
+import { TechChip } from './TechChip'
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -46,8 +46,9 @@ function ProjectCard({
         ? <Button
             className={classes.Button}
             size="large"
-            color="primary" 
-            variant="contained" 
+            color="primary"
+            variant="contained"
+            target="_blank"
             href={demo}>
             Demo
           </Button>
@@ -56,8 +57,9 @@ function ProjectCard({
           <Button 
             className={classes.Button}
             size="large"
-            color="secondary" 
-            variant="outlined" 
+            color="secondary"
+            variant="outlined"
+            target="_blank"
             href={repo}>
             Repo
           </Button>

@@ -1,26 +1,25 @@
 import { GitHub } from "@material-ui/icons";
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
-  mdiLanguageTypescript, 
-  mdiLanguageJavascript,
-  mdiLanguageHtml5,
-  mdiChartLineVariant,
-  mdiCalendarRange,
-  mdiSwapHorizontal,
-  mdiLanguageRuby,
   mdiLanguageRubyOnRails,
+  mdiLanguageTypescript,
+  mdiLanguageJavascript,
+  mdiAlphaKBoxOutline,
+  mdiChartLineVariant,
   mdiCreditCardCheck,
   mdiDatabaseSearch,
-  mdiAlphaKBoxOutline,
-  mdiNodejs,
+  mdiSwapHorizontal,
+  mdiLanguageHtml5,
+  mdiCalendarRange,
+  mdiLanguageRuby,
   mdiLanguageCss3,
-  mdiMaterialUi, 
+  mdiMaterialUi,
+  mdiNodejs,
+  mdiMapbox,
   mdiReact,
 } from '@mdi/js';
-// import tensorflow from './tensorFlow'
 
-
-let activeRecords, amCharts, axios, css, dateIO, express, html, js, jest, keras, mui, psql, rails, react, ruby, scss, storyBook, stripe, tf, ts
+let activeRecords, amCharts, axios, css, dateIO, express, html, js, jest, keras, mapBox, mui, psql, rails, react, ruby, scss, storyBook, stripe, tf, ts
 activeRecords = {
   label : 'ActiveRecords',
   icon: mdiLanguageRubyOnRails
@@ -65,6 +64,10 @@ keras = {
   label: 'Keras',
   icon: mdiAlphaKBoxOutline
 }
+mapBox = {
+  label: 'Mapbox',
+  icon: mdiMapbox
+}
 mui = {
   label: 'Material UI', 
   icon: null,/* mdiMaterialUi */
@@ -77,7 +80,7 @@ psql = {
   label: 'PostgreSQL', 
   icon: mdiDatabaseSearch 
 }
-rails ={
+rails = {
   label: 'Rails',
   icon: mdiLanguageRubyOnRails
 }
@@ -142,13 +145,27 @@ const projects = [
     repo: 'https://github.com/jswelsh/currency_converter_v1',
     image: '/public/CurExC.jpeg',
     technologies: [
-      {...amCharts}, 
-      {...axios}, 
+      {...react},
+      {...mui},
+      {...amCharts},
+      {...axios},
       {...dateIO},
-      {...mui}, 
-      {...react}, 
-      {...ts}, 
+      {...ts},
     ],
+  }, {
+    header: 'Maps and Charts sandbox',
+    demo: 'https://amchartssandbox.web.app/',
+    repo: 'https://github.com/jswelsh/MapsAndChartsSandbox',
+    image: null,
+    technologies: [
+      {...amCharts},
+      {...mapBox},
+      {...mui},
+      {...react},
+      {...js},
+      {...html},
+      {...css}
+    ], 
   }, {
     header: 'TransLink',
     demo: 'https://agitated-galileo-f1090b.netlify.app/',
@@ -194,17 +211,6 @@ const projects = [
       {...activeRecords},
       {...keras},
       {...tf}
-    ], 
-  }, {
-    header: 'amCharts',
-    demo: null,
-    repo: 'https://github.com/jswelsh/amcharts',
-    image: null,
-    technologies: [
-      {...amCharts}, 
-      {...js},
-      {...html},
-      {...css}
     ], 
   }
 /*, {

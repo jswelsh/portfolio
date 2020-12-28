@@ -1,8 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import LinkItem from '@material-ui/core/Link';
+
 
 import { Link } from "react-router-dom";
-import { Typography, Toolbar, AppBar, Menu, MenuItem ,IconButton } from "@material-ui/core";
+import { Typography, Toolbar, AppBar, Menu, MenuItem ,IconButton, Button } from "@material-ui/core";
 import GitHubIcon from '@material-ui/icons/GitHub';
 import AppsIcon from '@material-ui/icons/Apps';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
@@ -19,6 +21,8 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
 }));
+
+const preventDefault = (event) => event.preventDefault();
 
 const NavBar = ({
   darkState,
@@ -77,11 +81,12 @@ const NavBar = ({
           <IconButton onClick={() => handleThemeChange()}>
             {darkState ? <Brightness4Icon/> : <Brightness7Icon/>}
           </IconButton>
-          <IconButton>
-            <GitHubIcon 
-              fontSize={'large'} 
-              onClick={() =>  window.location.href='https://github.com/jswelsh'}/>
-          </IconButton>
+          <LinkItem
+            component={IconButton}
+            target="_blank"
+            href={'https://github.com/jswelsh'}>
+            <GitHubIcon fontSize={'large'}/>
+          </LinkItem>
         </div>
       </Toolbar>
     </AppBar>

@@ -21,11 +21,6 @@ const useStyles = makeStyles((theme) => ({
 const gitHubUrl ='https://api.github.com/users/jswelsh'
 // const fetchGitHubData = axios.get(gitHubUrl);
 
-
-/* 
-*/
-
-
 const Profile = ({
   darkState
 }) => {
