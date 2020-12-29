@@ -1,8 +1,8 @@
 import { GitHub } from "@material-ui/icons"
 import curExCLight from './curExCLight.jpg'
 import curExCDark from './curExCDark.jpg'
-import mapAndChartsLight from './mapAndChartsLight.jpg'
-import mapAndChartsDark from './mapAndChartsDark.jpg'
+import mapAndChartsLight from './mapsAndChartsLight.jpg'
+import mapAndChartsDark from './mapsAndChartsDark.jpg'
 import transLinkLight from './transLinkLight.jpg'
 import transLinkDark from './transLinkDark.jpg'
 import jungleLight from './jungleLight.jpg'
