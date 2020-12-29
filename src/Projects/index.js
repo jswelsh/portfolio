@@ -24,11 +24,8 @@ const Projects = ({
   return (
     <>
       <main className={classes.root}>
-        {/* Hero unit */}
         <HeroContent />
-        {/* <Container className={classes.cardGrid} maxWidth="lg">*/}
         <Container className={classes.cardGrid} maxWidth="lg">
-          {/* End hero unit */}
           <Grid 
             container 
             justify="center"
@@ -46,10 +43,6 @@ const Projects = ({
                 technologies={project.technologies}
                 header={project.header}
                 image={project.image}
-                /*
-                                imageDark={project.imageDark}
-                imageLight={project.imageLight} 
-                 */
                 demo={project.demo}
                 repo={project.repo}/>
             </Grid>)}

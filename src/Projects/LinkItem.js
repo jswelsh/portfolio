@@ -6,7 +6,7 @@ function LinkItem({
   icon,
   label
 }) {
-  return (<Link color="inherit" href={link}>
+  return (<Link color="inherit" target={ label !== 'Email' ? "_blank" : null} href={link}>
     <Grid container spacing={2} justify="center" direction="row">
       <Grid item>
         {icon}
