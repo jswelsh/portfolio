@@ -1,14 +1,16 @@
 import { GitHub } from "@material-ui/icons"
-import mapAndChartsLight from './mapAndChartsLight.jpg'
-import mapAndChartsDark from './mapAndChartsDark.jpg'
 import curExCLight from './curExCLight.jpg'
 import curExCDark from './curExCDark.jpg'
+import mapAndChartsLight from './mapAndChartsLight.jpg'
+import mapAndChartsDark from './mapAndChartsDark.jpg'
 import transLinkLight from './transLinkLight.jpg'
 import transLinkDark from './transLinkDark.jpg'
 import jungleLight from './jungleLight.jpg'
 import jungleDark from './jungleDark.jpg'
 import never86Light from './never86Light.jpg'
 import never86Dark from './never86Dark.jpg'
+import schedulerLight from './schedulerLight.jpg'
+import schedulerDark from './schedulerDark.jpg'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
   mdiLanguageRubyOnRails,
@@ -214,8 +216,8 @@ const projects = [
     demo: null,
     repo: 'https://github.com/jswelsh/scheduler',
     image: {
-      light: null,
-      dark: null
+      light: schedulerLight,
+      dark: schedulerDark
     },
     technologies: [
       {...react}, 
