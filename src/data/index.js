@@ -5,6 +5,10 @@ import curExCLight from './curExCLight.jpg'
 import curExCDark from './curExCDark.jpg'
 import transLinkLight from './transLinkLight.jpg'
 import transLinkDark from './transLinkDark.jpg'
+import jungleLight from './jungleLight.jpg'
+import jungleDark from './jungleDark.jpg'
+import never86Light from './never86Light.jpg'
+import never86Dark from './never86Dark.jpg'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
   mdiLanguageRubyOnRails,
@@ -195,8 +199,8 @@ const projects = [
     demo: null,
     repo: 'https://github.com/jswelsh/jungle',
     image: {
-      light: null,
-      dark: null
+      light: jungleLight,
+      dark: jungleDark
     },
     technologies: [
       {...activeRecords},
@@ -222,12 +226,12 @@ const projects = [
       {...express}
     ], 
   }, {
-    header: "Never86'd",
+    header: "Never86",
     demo: null,
-    repo: 'https://github.com/jswelsh/never86-ed',
+    repo: 'https://github.com/jswelsh/never86',
     image: {
-      light: null,
-      dark: null
+      light: never86Light,
+      dark: never86Dark
     },
     technologies: [
       {...ruby}, 
