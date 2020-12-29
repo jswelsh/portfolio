@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Projects = ({
-
+  darkState
 }) => {
   const classes = useStyles();
   return (
@@ -42,9 +42,14 @@ const Projects = ({
               md={6}
               lg={6}>
               <ProjectCard 
+                darkState={darkState}
                 technologies={project.technologies}
                 header={project.header}
                 image={project.image}
+                /*
+                                imageDark={project.imageDark}
+                imageLight={project.imageLight} 
+                 */
                 demo={project.demo}
                 repo={project.repo}/>
             </Grid>)}

@@ -1,4 +1,10 @@
-import { GitHub } from "@material-ui/icons";
+import { GitHub } from "@material-ui/icons"
+import mapAndChartsLight from './mapAndChartsLight.jpg'
+import mapAndChartsDark from './mapAndChartsDark.jpg'
+import curExCLight from './curExCLight.jpg'
+import curExCDark from './curExCDark.jpg'
+import transLinkLight from './transLinkLight.jpg'
+import transLinkDark from './transLinkDark.jpg'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
   mdiLanguageRubyOnRails,
@@ -143,7 +149,10 @@ const projects = [
     header: 'CurExC',
     demo: 'https://curexc.web.app/',
     repo: 'https://github.com/jswelsh/currency_converter_v1',
-    image: '/public/CurExC.jpeg',
+    image: {
+      light:curExCLight,
+      dark:curExCDark
+    },
     technologies: [
       {...react},
       {...mui},
@@ -156,7 +165,10 @@ const projects = [
     header: 'Maps and Charts sandbox',
     demo: 'https://amchartssandbox.web.app/',
     repo: 'https://github.com/jswelsh/MapsAndChartsSandbox',
-    image: null,
+    image: {
+      light: mapAndChartsLight,
+      dark: mapAndChartsDark
+    },
     technologies: [
       {...amCharts},
       {...mapBox},
@@ -170,7 +182,10 @@ const projects = [
     header: 'TransLink',
     demo: 'https://agitated-galileo-f1090b.netlify.app/',
     repo: 'https://github.com/jswelsh/translinkGraph',
-    image: null,
+    image: {
+      light: transLinkLight,
+      dark: transLinkDark
+    },
     technologies: [
       {...html}, 
       {...js}
@@ -179,7 +194,10 @@ const projects = [
     header: 'Jungle',
     demo: null,
     repo: 'https://github.com/jswelsh/jungle',
-    image: null,
+    image: {
+      light: null,
+      dark: null
+    },
     technologies: [
       {...activeRecords},
       {...psql},
@@ -191,7 +209,10 @@ const projects = [
     header: 'Scheduler',
     demo: null,
     repo: 'https://github.com/jswelsh/scheduler',
-    image: null,
+    image: {
+      light: null,
+      dark: null
+    },
     technologies: [
       {...react}, 
       {...axios}, 
@@ -204,7 +225,10 @@ const projects = [
     header: "Never86'd",
     demo: null,
     repo: 'https://github.com/jswelsh/never86-ed',
-    image: null,
+    image: {
+      light: null,
+      dark: null
+    },
     technologies: [
       {...ruby}, 
       {...rails},

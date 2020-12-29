@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    // paddingTop: '56.25%', // 16:9
-    paddingTop: '60.25%', // 16:9
+    // paddingTop: '60.25%', // 16:9
+    paddingTop: '65.25%', // 16:9
 
   },
   cardContent: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProjectCard({
+  darkState,
   technologies,
   header,
   image,
@@ -30,6 +31,7 @@ function ProjectCard({
   repo
 }) {
   const classes = useStyles();
+  console.log(darkState)
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -65,7 +67,7 @@ function ProjectCard({
           </Button>
         </>}
       />
-      <CardMedia className={classes.cardMedia} image={"https://source.unsplash.com/random"} title={header} />
+      <CardMedia className={classes.cardMedia} image={ darkState ? image.dark : image.light} title={header} />
       <CardContent className={classes.cardContent}>
         {technologies.map(technology =>
         <TechChip 
