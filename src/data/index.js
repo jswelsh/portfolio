@@ -1,16 +1,13 @@
 import { GitHub } from "@material-ui/icons"
 import curExCLight from './curExCLight.jpg'
 import curExCDark from './curExCDark.jpg'
-import mapAndChartsLight from './mapsAndChartsLight.jpg'
-import mapAndChartsDark from './mapsAndChartsDark.jpg'
-import transLinkLight from './transLinkLight.jpg'
-import transLinkDark from './transLinkDark.jpg'
+import SvgMapsAndCharts from './SvgMapsAndCharts'
+import SvgTransLink from './SvgTransLink'
 import jungleLight from './jungleLight.jpg'
 import jungleDark from './jungleDark.jpg'
-import never86Light from './never86Light.jpg'
-import never86Dark from './never86Dark.jpg'
-import schedulerLight from './schedulerLight.jpg'
-import schedulerDark from './schedulerDark.jpg'
+import SvgNever86 from './SvgNever86'
+
+import SvgScheduler from './SvgScheduler'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
   mdiLanguageRubyOnRails,
@@ -171,9 +168,8 @@ const projects = [
     header: 'Maps and Charts sandbox',
     demo: 'https://amchartssandbox.web.app/',
     repo: 'https://github.com/jswelsh/MapsAndChartsSandbox',
-    image: {
-      light: mapAndChartsLight,
-      dark: mapAndChartsDark
+    image: (darkState) => {
+      return <SvgMapsAndCharts darkState={darkState} />
     },
     technologies: [
       {...amCharts},
@@ -188,9 +184,8 @@ const projects = [
     header: 'TransLink',
     demo: 'https://agitated-galileo-f1090b.netlify.app/',
     repo: 'https://github.com/jswelsh/translinkGraph',
-    image: {
-      light: transLinkLight,
-      dark: transLinkDark
+    image: (darkState) => {
+      return <SvgTransLink darkState={darkState} />
     },
     technologies: [
       {...html}, 
@@ -215,9 +210,8 @@ const projects = [
     header: 'Scheduler',
     demo: null,
     repo: 'https://github.com/jswelsh/scheduler',
-    image: {
-      light: schedulerLight,
-      dark: schedulerDark
+    image: (darkState) => {
+      return <SvgScheduler darkState={darkState} />
     },
     technologies: [
       {...react}, 
@@ -231,9 +225,8 @@ const projects = [
     header: "Never86",
     demo: null,
     repo: 'https://github.com/jswelsh/never86',
-    image: {
-      light: never86Light,
-      dark: never86Dark
+    image: (darkState) => {
+      return <SvgNever86 darkState={darkState} />
     },
     technologies: [
       {...ruby}, 
