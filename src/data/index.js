@@ -1,6 +1,5 @@
 import { GitHub } from "@material-ui/icons"
-import curExCLight from './curExCLight.jpg'
-import curExCDark from './curExCDark.jpg'
+import SvgCurExC from './SvgCurExC'
 import SvgMapsAndCharts from './SvgMapsAndCharts'
 import SvgTransLink from './SvgTransLink'
 import SvgJungle from './SvgJungle'
@@ -151,9 +150,8 @@ const projects = [
     header: 'CurExC',
     demo: 'https://curexc.web.app/',
     repo: 'https://github.com/jswelsh/currency_converter_v1',
-    image: {
-      light:curExCLight,
-      dark:curExCDark
+    image: (darkState) => {
+      return <SvgCurExC darkState={darkState} />
     },
     technologies: [
       {...react},
