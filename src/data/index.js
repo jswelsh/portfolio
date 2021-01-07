@@ -3,8 +3,7 @@ import curExCLight from './curExCLight.jpg'
 import curExCDark from './curExCDark.jpg'
 import SvgMapsAndCharts from './SvgMapsAndCharts'
 import SvgTransLink from './SvgTransLink'
-import jungleLight from './jungleLight.jpg'
-import jungleDark from './jungleDark.jpg'
+import SvgJungle from './SvgJungle'
 import SvgNever86 from './SvgNever86'
 
 import SvgScheduler from './SvgScheduler'
@@ -195,9 +194,8 @@ const projects = [
     header: 'Jungle',
     demo: null,
     repo: 'https://github.com/jswelsh/jungle',
-    image: {
-      light: jungleLight,
-      dark: jungleDark
+    image: (darkState) => {
+      return <SvgJungle darkState={darkState} />
     },
     technologies: [
       {...activeRecords},

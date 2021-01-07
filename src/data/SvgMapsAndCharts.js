@@ -1,12 +1,12 @@
-function SvgMapAndCharts({darkState}) {
+function SvgMapsAndCharts({darkState}) {
   const backGround = darkState ? "#303030" : "#ffffff"
   const primary = {
     light: darkState ? '#ce93d8' : '#03a9f4ff',
     dark: darkState ? '#8e24aa': '#2962ffff'
   }
   const secondary = {
-    light: darkState ? '#03a9f4ff' : '#ce93d8',
-    dark: darkState ? '#2962ffff' : '#8e24aa'
+    light: darkState ? '#2962ffff' : '#ce93d8',
+    dark: darkState ? '#03a9f4ff' : '#8e24aa'
   }
   return (
     <svg
@@ -17,12 +17,12 @@ function SvgMapAndCharts({darkState}) {
         style={{
           fontVariationSettings: "normal",
         }}
-        fill="#fff"
+        fill={backGround}
         fillRule="evenodd"
         paintOrder="stroke markers fill"
         d="M264.583 0v264.583H0V0z"
       />
-      <g fill="#2962ff" fillRule="evenodd" paintOrder="stroke markers fill">
+      <g fill={primary.dark} fillRule="evenodd" paintOrder="stroke markers fill">
         <rect
           style={{
             fontVariationSettings: "normal",
@@ -41,7 +41,7 @@ function SvgMapAndCharts({darkState}) {
           ry={0}
         />
       </g>
-      <g fill="none" strokeWidth={24} strokeMiterlimit={10} stroke="#2962ff">
+      <g fill="none" strokeWidth={24} strokeMiterlimit={10} stroke={primary.dark}>
         <path
           d="M156.945 108.342c12.601 12.601 22.5 26.116 28.287 37.981 6.974 14.297 7.963 26.385 2.938 31.41-5.237 5.237-18.062 4.203-33.266-3.434-11.495-5.773-24.35-15.642-36.312-27.604-12.265-12.265-22.477-25.28-28.223-36.993-7.27-14.823-7.952-27.449-2.816-32.585 4.985-4.985 16.735-4.249 30.876 2.581 11.948 5.771 25.791 15.92 38.516 28.644z"
           strokeWidth={6.349919999999999}
@@ -57,38 +57,38 @@ function SvgMapAndCharts({darkState}) {
       </g>
       <path
         d="M137.898 127.326a4.032 4.21 0 01-4.032-4.21 4.032 4.21 0 014.032-4.209 4.032 4.21 0 014.032 4.21 4.032 4.21 0 01-4.032 4.21m0-15.996a11.29 11.786 0 00-11.29 11.786c0 8.84 11.29 21.889 11.29 21.889s11.29-13.05 11.29-21.89a11.29 11.786 0 00-11.29-11.786zM86.626 175.774l-2.158-8.725c-4.437 1.612-7.234 6.11-6.567 10.883z"
-        fill="#8e24aa"
+        fill={secondary.dark}
       />
       <path
         d="M89.263 186.438l-2.158-8.725-8.725 2.158c1.636 4.533 6.11 7.233 10.883 6.567"
-        fill="#03a9f4"
+        fill={primary.light}
       />
       <path
         d="M91.202 185.959l-4.795-19.39c5.064-.738 9.876 2.496 11.122 7.537 1.247 5.041-1.503 10.145-6.327 11.853M118.13 65.096c-1.782-.56-3.097-1.869-3.77-3.48l3.022-.67a2.995 2.995 0 001.651 1.276 3.003 3.003 0 003.314-1.063l2.96.931a6.033 6.033 0 01-7.178 3.006zM114.19 57.54a6.025 6.025 0 017.555-3.939 6.033 6.033 0 014.165 6.574l-2.96-.931a3.003 3.003 0 00-2.109-2.77 3.013 3.013 0 00-3.777 1.97l-.118.543-3.022.67a5.817 5.817 0 01.266-2.116"
-        fill="#8e24aa"
+        fill={secondary.dark}
       />
       <path
         d="M126.643 61.458a6.92 6.92 0 00-.868-6.01l2.25-2.03a10.012 10.012 0 011.492 8.944c-1.667 5.297-7.324 8.223-12.593 6.566a10.033 10.033 0 01-6.82-11.62l2.903.913c-.552 3.395 1.44 6.77 4.821 7.833a7.03 7.03 0 008.815-4.596"
-        fill="#8e24aa"
+        fill={secondary.dark}
       />
       <path
         d="M110.707 55.393c2.001-4.687 7.282-7.184 12.244-5.624a9.92 9.92 0 013.633 2.07l-2.255 2.049a6.751 6.751 0 00-2.282-1.245c-3.382-1.063-6.946.563-8.437 3.663l-2.903-.913"
-        fill="#03a9f4"
+        fill={primary.light}
       />
       <path
         d="M195.904 150.478a9.41 9.41 0 01-.233-8.98l3.869 2.254a4.979 4.979 0 00.232 4.513 4.83 4.83 0 001.363 1.53l-2.254 3.87a9.38 9.38 0 01-2.977-3.187zM201.635 141.425a4.83 4.83 0 00-1.53 1.363l-3.87-2.254a9.38 9.38 0 013.187-2.977c4.381-2.506 9.917-1.129 12.645 3.035l-3.897 2.229a5.009 5.009 0 00-6.535-1.396"
-        fill="#8e24aa"
+        fill={secondary.dark}
       />
       <path
         d="M210.243 144.202l3.897-2.23a9.513 9.513 0 01-3.311 12.162l-2.23-3.898a5 5 0 001.644-6.034"
-        fill="#03a9f4"
+        fill={primary.light}
       />
       <path
         d="M199.846 154.229l2.254-3.869a4.992 4.992 0 004.012.015l2.23 3.898a9.525 9.525 0 01-8.496-.044"
-        fill="#8e24aa"
+        fill={secondary.dark}
       />
     </svg>
   );
 }
 
-export default SvgMapAndCharts
+export default SvgMapsAndCharts
