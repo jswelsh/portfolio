@@ -23,8 +23,7 @@ function LanguageGraph({
   chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
   chart.data = [
-
-      {
+    {
       language: "TypeScript",
       value: 137.9
     },

@@ -9,11 +9,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  cardMedia: {
-    // paddingTop: '60.25%', // 16:9
-    paddingTop: '65.25%', // 16:9
-
-  },
   cardContent: {
     flexGrow: 1,
   },
@@ -40,7 +35,6 @@ function ProjectCard({
           align: 'left',
           variant: "h5"
         }}
-        /* avatar={avatar} */
         action={
         <>
         {
@@ -67,13 +61,14 @@ function ProjectCard({
           </Button>
         </>}
       />
-      <CardMedia className={classes.cardMedia} image={ darkState ? image.dark : image.light} title={header} />
+      {image(darkState)}
       <CardContent className={classes.cardContent}>
         {technologies.map(technology =>
         <TechChip 
           icon={technology.icon}
           label={technology.label}
           svg={technology.svg}
+          svgAlt={technology.svgAlt}
           />)}
       </CardContent>
     </Card>);

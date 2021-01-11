@@ -2,9 +2,10 @@ import { GitHub } from "@material-ui/icons"
 import SvgCurExC from './SvgCurExC'
 import SvgMapsAndCharts from './SvgMapsAndCharts'
 import SvgTransLink from './SvgTransLink'
+import SvgSfuRugby from './SvgSfuRugby'
 import SvgJungle from './SvgJungle'
 import SvgNever86 from './SvgNever86'
-
+import SvgDocusaurus from './SvgDocusaurus'
 import SvgScheduler from './SvgScheduler'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
@@ -25,7 +26,7 @@ import {
   mdiReact,
 } from '@mdi/js';
 
-let activeRecords, amCharts, axios, css, dateIO, express, html, js, jest, keras, mapBox, mui, psql, rails, react, ruby, scss, storyBook, stripe, tf, ts
+let activeRecords, amCharts, axios, css, dateIO, Docusaurus, express, html, js, jest, keras, mapBox, mui, psql, rails, react, ruby, scss, storyBook, stripe, tf, ts
 activeRecords = {
   label : 'ActiveRecords',
   icon: mdiLanguageRubyOnRails
@@ -45,6 +46,12 @@ css = {
 dateIO = {
   label:'date-io',
   icon: mdiCalendarRange
+}
+Docusaurus = {
+  label: 'Docusaurus',
+  icon: null,
+  svg : null,
+  svgAlt: () => <SvgDocusaurus />
 }
 express = {
   label: 'Express',
@@ -187,6 +194,17 @@ const projects = [
       {...html},
       {...js}
     ],
+  }, {
+    header: 'SFU Rugby Constitution',
+    demo: null,
+    repo: 'https://github.com/jswelsh/SFU_const_doc',
+    image: (darkState) => {
+      return <SvgSfuRugby darkState={darkState} />
+    },
+    technologies: [
+      {...react},
+      {...Docusaurus}
+    ], 
   }, {
     header: 'Jungle',
     demo: null,

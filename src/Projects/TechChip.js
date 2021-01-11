@@ -1,4 +1,4 @@
-import { Chip, Avatar,SvgIcon } from "@material-ui/core";
+import { Chip,SvgIcon } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@mdi/react'
 
@@ -7,12 +7,16 @@ const useStyles = makeStyles((theme) => ({
   chip: {
     margin: theme.spacing(0.5),
   },
+  chippy: {
+    padding: '1px',
+  },
 }));
 
 function TechChip({
-  label, 
+  label,
   icon,
-  svg
+  svg,
+  svgAlt
 }) {
   
   const classes = useStyles();
@@ -20,15 +24,15 @@ function TechChip({
   }
   return (
     (
-    icon !== null ? 
-    <Chip 
+    icon !== null ?
+    <Chip
       icon={<Icon size={.80} path={icon} />}
       key={label}
       color="primary"
       label={label} 
       className={classes.chip}/>
-    : 
-    <Chip 
+    : svg !== null ?
+    <Chip
       icon={
       <SvgIcon viewBox={svg.viewBox}>
         <path d={svg.path}/>
@@ -37,7 +41,13 @@ function TechChip({
       color="primary"
       label={label} 
       className={classes.chip}/>
-    )    
+    : <Chip
+    icon={svgAlt()}
+    key={label}
+    color="primary"
+    label={label} 
+    className={classes.chip}/>
+    )
   );
 }
 
