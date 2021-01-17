@@ -6,6 +6,7 @@ import SvgSfuRugby from './SvgSfuRugby'
 import SvgJungle from './SvgJungle'
 import SvgNever86 from './SvgNever86'
 import SvgDocusaurus from './SvgDocusaurus'
+import SvgInfima from './SvgInfima'
 import SvgScheduler from './SvgScheduler'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { 
@@ -26,7 +27,7 @@ import {
   mdiReact,
 } from '@mdi/js';
 
-let activeRecords, amCharts, axios, css, dateIO, Docusaurus, express, html, js, jest, keras, mapBox, mui, psql, rails, react, ruby, scss, storyBook, stripe, tf, ts
+let activeRecords, amCharts, axios, css, dateIO, Docusaurus, express, infima, html, js, jest, keras, mapBox, mui, psql, rails, react, ruby, scss, storyBook, stripe, tf, ts
 activeRecords = {
   label : 'ActiveRecords',
   icon: mdiLanguageRubyOnRails
@@ -56,6 +57,12 @@ Docusaurus = {
 express = {
   label: 'Express',
   icon: mdiNodejs
+}
+infima = {
+  label: 'Infima',
+  icon: null,
+  svg : null,
+  svgAlt: () => <SvgInfima />
 }
 html = {
   label: 'HTML5',
@@ -196,13 +203,14 @@ const projects = [
     ],
   }, {
     header: 'SFU Rugby Constitution',
-    demo: null,
+    demo: 'https://sfuconstitution.web.app/?fbclid=IwAR2RToLMKvMxomUOSI8r7rooErDnVaKkrPF6X3ceWGapmxKBE0ai6lQB_p8',
     repo: 'https://github.com/jswelsh/SFU_const_doc',
     image: (darkState) => {
       return <SvgSfuRugby darkState={darkState} />
     },
     technologies: [
       {...react},
+      {...infima},
       {...Docusaurus}
     ], 
   }, {
