@@ -1,13 +1,28 @@
 import { makeStyles } from '@material-ui/core/styles';
-
-import { CardHeader, Card, CardContent, CardMedia, Button } from "@material-ui/core";
+import clsx from 'clsx';
+import { CardHeader, Card, CardContent, Button } from "@material-ui/core";
 import { TechChip } from './TechChip'
 
 const useStyles = makeStyles((theme) => ({
   card: {
     height: '100%',
     display: 'flex',
+    borderRadius: '2%',
     flexDirection: 'column',
+    transition: "0.3s ease-out",
+    boxShadow: "0 8px 30px -12px rgba(0,0,0,0.3)",
+  }, 
+  cardLight: {
+    "&:hover": {
+      transform: "translateY(-5px) scale(1.005) translateZ(0)",
+      boxShadow: "0 16px 60px -12.125px rgba(60, 138, 252, 0.9)",
+    }
+  },
+  cardDark: {
+    "&:hover": {
+      transform: "translateY(-5px) scale(1.005) translateZ(0)",
+      boxShadow: "0 16px 60px -12.125px #8e24aa",
+    }
   },
   cardContent: {
     flexGrow: 1,
@@ -25,10 +40,10 @@ function ProjectCard({
   demo,
   repo
 }) {
-  const classes = useStyles();
+  const classes = useStyles({darkState:darkState});
   console.log(darkState)
   return (
-    <Card className={classes.card}>
+    <Card className={clsx(darkState ? classes.cardDark : classes.cardLight, classes.card)}>
       <CardHeader
         title={header}
         titleTypographyProps={{

@@ -6,28 +6,35 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
     backgroundColor: theme.palette.primary.dark 
-
+  },
+  header: {
+    color:'#fff'
+  },
+  subHeader: {
+    color: 'rgba(255, 255, 255, 0.7)'
   },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
 }));
 
-function HeroContent({}) {
+function HeroContent({darkState}) {
   const classes = useStyles();
 
   return (
     <div className={classes.heroContent}>
       <Container maxWidth="sm">
         <Typography
+          className={classes.header}
           component="h1"
           variant="h2"
           align="center"
-          color="textPrimaryDark"
+          // color="textPrimaryDark"
           gutterBottom>
           My Projects
         </Typography>
         <Typography
+          className={classes.subHeader}
           variant="h5"
           align="center"
           color="textSecondary"

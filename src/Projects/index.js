@@ -24,12 +24,13 @@ const Projects = ({
   return (
     <>
       <main className={classes.root}>
-        <HeroContent />
+        <HeroContent
+          darkState={darkState}/>
         <Container className={classes.cardGrid} maxWidth="lg">
           <Grid 
             container 
             justify="center"
-            spacing={4}>
+            spacing={6}>
             {projects.map((project) =>
             <Grid
               item
